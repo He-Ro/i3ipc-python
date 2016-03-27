@@ -183,7 +183,7 @@ class Connection(object):
         self._pubsub = _PubSub(self)
         self.props = _PropsObject(self)
         self.subscriptions = 0
-        self.socket_path = socket_path
+        self.socket_path = socket_path.rstrip()
         self.cmd_socket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         self.cmd_socket.connect(self.socket_path)
 
